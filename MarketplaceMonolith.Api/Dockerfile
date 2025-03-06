@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
 COPY MarketplaceMonolith.Api/*.csproj ./MarketplaceMonolith.Api/
-COPY MarketplaceMonolith.Api.sln ./ 
+COPY MarketplaceMonolith.Api/MarketplaceMonolith.Api.sln ./ 
 
 WORKDIR /app/MarketplaceMonolith.Api
 
