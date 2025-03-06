@@ -2,7 +2,8 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
 WORKDIR /app
 
-COPY . .
+COPY MarketplaceMonolith.Api/*.csproj ./MarketplaceMonolith.Api/
+COPY MarketplaceMonolith.Api.sln ./ 
 
 WORKDIR /app/MarketplaceMonolith.Api
 
@@ -16,7 +17,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 
 WORKDIR /app
 
-COPY --from=build /app/publish .
+COPY --from=build /app/publish ./
 
 EXPOSE 80
 
